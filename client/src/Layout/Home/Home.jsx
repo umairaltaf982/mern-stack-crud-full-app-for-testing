@@ -24,7 +24,7 @@ class Home extends Component {
 
   removeStudent = async id => {
     try {
-      const studentRemoved = await axios.delete(`/api/students/${id}`);
+      await axios.delete(`/api/students/${id}`);
       const students = await axios("/api/students/");
       this.setState({ data: students.data });
     } catch (err) {
